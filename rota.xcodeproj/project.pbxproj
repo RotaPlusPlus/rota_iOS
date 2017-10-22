@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9AF6E86C1F9C2D1400D794C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E86B1F9C2D1400D794C4 /* AppDelegate.swift */; };
-		9AF6E86E1F9C2D1400D794C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E86D1F9C2D1400D794C4 /* ViewController.swift */; };
+		9AF6E86E1F9C2D1400D794C4 /* HumidityCheckController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E86D1F9C2D1400D794C4 /* HumidityCheckController.swift */; };
 		9AF6E8711F9C2D1400D794C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E86F1F9C2D1400D794C4 /* Main.storyboard */; };
 		9AF6E8731F9C2D1400D794C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E8721F9C2D1400D794C4 /* Assets.xcassets */; };
 		9AF6E8761F9C2D1400D794C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E8741F9C2D1400D794C4 /* LaunchScreen.storyboard */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		9AF6E8681F9C2D1400D794C4 /* rota.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rota.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF6E86B1F9C2D1400D794C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9AF6E86D1F9C2D1400D794C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9AF6E86D1F9C2D1400D794C4 /* HumidityCheckController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityCheckController.swift; sourceTree = "<group>"; };
 		9AF6E8701F9C2D1400D794C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9AF6E8721F9C2D1400D794C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9AF6E8751F9C2D1400D794C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,8 +98,10 @@
 			isa = PBXGroup;
 			children = (
 				9AF6E86B1F9C2D1400D794C4 /* AppDelegate.swift */,
-				9AF6E86D1F9C2D1400D794C4 /* ViewController.swift */,
 				9AF6E86F1F9C2D1400D794C4 /* Main.storyboard */,
+				9AF6E89B1F9C2EE500D794C4 /* View */,
+				9AF6E89A1F9C2EDB00D794C4 /* Controller */,
+				9AF6E8991F9C2ED500D794C4 /* Model */,
 				9AF6E8721F9C2D1400D794C4 /* Assets.xcassets */,
 				9AF6E8741F9C2D1400D794C4 /* LaunchScreen.storyboard */,
 				9AF6E8771F9C2D1400D794C4 /* Info.plist */,
@@ -123,6 +125,28 @@
 				9AF6E88D1F9C2D1400D794C4 /* Info.plist */,
 			);
 			path = rotaUITests;
+			sourceTree = "<group>";
+		};
+		9AF6E8991F9C2ED500D794C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9AF6E89A1F9C2EDB00D794C4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9AF6E86D1F9C2D1400D794C4 /* HumidityCheckController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9AF6E89B1F9C2EE500D794C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AF6E86E1F9C2D1400D794C4 /* ViewController.swift in Sources */,
+				9AF6E86E1F9C2D1400D794C4 /* HumidityCheckController.swift in Sources */,
 				9AF6E86C1F9C2D1400D794C4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
