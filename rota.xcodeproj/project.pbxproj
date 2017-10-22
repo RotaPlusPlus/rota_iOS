@@ -27,6 +27,8 @@
 		9AF6E8EE1F9CBA4500D794C4 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E8ED1F9CBA4500D794C4 /* Extension+UIColor.swift */; };
 		9AF6E9181F9D1B5000D794C4 /* talkDoctor.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E9171F9D1B4900D794C4 /* talkDoctor.png */; };
 		9AF6E91E1F9D37FA00D794C4 /* human.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E91D1F9D37F400D794C4 /* human.png */; };
+		9AF6E9201F9D39F600D794C4 /* talkDoctor2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E91F1F9D39EC00D794C4 /* talkDoctor2.png */; };
+		9AF6E9221F9D3AF300D794C4 /* couple.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E9211F9D3AF000D794C4 /* couple.png */; };
 		E0D2C2548804F5594C317F06 /* Pods_rotaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F6CA4EFAE1E7AD624CBF84 /* Pods_rotaUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +110,8 @@
 		9AF6E9131F9D183000D794C4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9AF6E9171F9D1B4900D794C4 /* talkDoctor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = talkDoctor.png; sourceTree = "<group>"; };
 		9AF6E91D1F9D37F400D794C4 /* human.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = human.png; sourceTree = "<group>"; };
+		9AF6E91F1F9D39EC00D794C4 /* talkDoctor2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = talkDoctor2.png; sourceTree = "<group>"; };
+		9AF6E9211F9D3AF000D794C4 /* couple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = couple.png; sourceTree = "<group>"; };
 		D67FE672C7A4D023A98A4897 /* Pods-rota.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rota.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rota/Pods-rota.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,6 +231,8 @@
 			children = (
 				9AF6E8F61F9D183000D794C4 /* ios */,
 				9AF6E8A11F9C80AB00D794C4 /* doctorIcon.png */,
+				9AF6E91F1F9D39EC00D794C4 /* talkDoctor2.png */,
+				9AF6E9211F9D3AF000D794C4 /* couple.png */,
 				9AF6E91D1F9D37F400D794C4 /* human.png */,
 				9AF6E9171F9D1B4900D794C4 /* talkDoctor.png */,
 				9AF6E8A31F9C80AB00D794C4 /* humidIcon.png */,
@@ -419,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AF6E8761F9C2D1400D794C4 /* LaunchScreen.storyboard in Resources */,
+				9AF6E9221F9D3AF300D794C4 /* couple.png in Resources */,
 				9AF6E8A51F9C817200D794C4 /* humidIcon.png in Resources */,
 				9AF6E8A61F9C817400D794C4 /* talkIcon.png in Resources */,
 				9AF6E8731F9C2D1400D794C4 /* Assets.xcassets in Resources */,
@@ -426,6 +433,7 @@
 				9AF6E8711F9C2D1400D794C4 /* Main.storyboard in Resources */,
 				9AF6E8AC1F9C90A600D794C4 /* Humidity.storyboard in Resources */,
 				9AF6E8A41F9C816F00D794C4 /* doctorIcon.png in Resources */,
+				9AF6E9201F9D39F600D794C4 /* talkDoctor2.png in Resources */,
 				9AF6E9181F9D1B5000D794C4 /* talkDoctor.png in Resources */,
 				9AF6E91E1F9D37FA00D794C4 /* human.png in Resources */,
 			);

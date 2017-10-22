@@ -75,9 +75,9 @@ extension DialogueViewController {
         let image: UIImage!
         
         if message.senderId == "2" {
-            image = UIImage(named: "talkDoctor.png")
+            image = UIImage(named: "talkDoctor2.png")
         } else {
-            image = UIImage(named: "human.png")
+            image = UIImage(named: "couple.png")
         }
         
         return JSQMessagesAvatarImageFactory.avatarImage(with: image, diameter: 30)
