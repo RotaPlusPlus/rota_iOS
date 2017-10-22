@@ -14,6 +14,7 @@ class HumidityViewController: UIViewController {
 
     @IBOutlet var messageLabel: UILabel!
     @IBOutlet var humidityLabel: UILabel!
+    var animeView: BAFluidView!
     var status = Status(humidity: 10)
     
     override func viewDidLoad() {
@@ -23,23 +24,29 @@ class HumidityViewController: UIViewController {
         humidityLabel.text = String(status.humidity) + " %"
         
         let waveHeight = status.humidity / 100
-        let animeView = BAFluidView(frame: self.view.frame, startElevation: waveHeight as NSNumber)
+        animeView = BAFluidView(frame: self.view.frame, startElevation: waveHeight as NSNumber)
         animeView?.fill(to: waveHeight as NSNumber)
         animeView?.strokeColor = .white
         
         if status.rank == .normal {
-            animeView?.fillColor = UIColor(red: 18/255, green: 97/255, blue: 101/255, alpha: 1.0)
+            colorChange(color: UIColor.rotaBlue)
         }
         else if status.rank == .careful {
-            animeView?.fillColor = UIColor(red: 244/255, green: 191/255, blue: 31/255, alpha: 1.0)
+            colorChange(color: UIColor.rotaYellow)
         }
         else if status.rank == .dangerous {
-            animeView?.fillColor = UIColor(red: 233/255, green: 68/255, blue: 28/255, alpha: 1.0)
+            colorChange(color: UIColor.rotaRed)
         }
         view.addSubview(animeView!)
         view.sendSubview(toBack: animeView!)
     }
-
+    
+    func colorChange(color: UIColor) {
+        animeView?.fillColor = color
+        humidityLabel.textColor = color
+        messageLabel.textColor = color
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
