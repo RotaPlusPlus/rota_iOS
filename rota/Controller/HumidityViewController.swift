@@ -139,8 +139,6 @@ extension HumidityViewController {
     func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
         print("update characteristics value")
         peripheral.setNotifyValue(true, for: characteristic)
-        print(connectingPeripheral)
-        print("setuped")
         if error != nil {
             print(error.debugDescription)
             return
