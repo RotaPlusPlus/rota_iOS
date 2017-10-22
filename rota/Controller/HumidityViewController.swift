@@ -8,13 +8,14 @@
 //
 
 import UIKit
-import BAFluidView
 import CoreBluetooth
+import BAFluidView
 
-class HumidityViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate{
+class HumidityViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
 
-    let centralManager:CBCentralManager!
-    var connectingPeripheral:CBPeripheral!
+    var centralManager: CBCentralManager!
+    var connectingPeripheral: CBPeripheral!
+    var peripheralManager: CBPeripheralManager!
 
     @IBOutlet var messageLabel: UILabel!
     @IBOutlet var humidityLabel: UILabel!
@@ -42,7 +43,9 @@ class HumidityViewController: UIViewController, CBCentralManagerDelegate, CBPeri
             colorChange(color: UIColor.rotaRed)
         }
         view.addSubview(animeView!)
+        
         view.sendSubview(toBack: animeView!)
+        centralManager = CBCentralManager(delegate: self, queue: nil)
     }
     
     func colorChange(color: UIColor) {
@@ -58,79 +61,102 @@ class HumidityViewController: UIViewController, CBCentralManagerDelegate, CBPeri
 
     required init(coder aDecoder: NSCoder) {
 
-        super.init(coder: aDecoder)
-        centralManager = CBCentralManager(delegate: self, queue: dispatch_get_main_queue())
+        super.init(coder: aDecoder)!
+        centralManager = CBCentralManager(delegate: self, queue: DispatchQueue.main)
     }
+    
+}
 
-    func centralManagerDidUpdateState(central: CBCentralManager!){
+extension HumidityViewController {
+
+    func centralManagerDidUpdateState(_ central: CBCentralManager){
 
         switch central.state{
-        case .PoweredOn:
-            println("poweredOn")
+        case .poweredOn:
+            print("poweredOn")
 
-            let serviceUUIDs:[AnyObject] = [CBUUID(string: "181A")]
-            let lastPeripherals = centralManager.retrieveConnectedPeripheralsWithServices(serviceUUIDs)
+            let serviceUUIDs:[AnyObject] = [CBUUID(string: "181B")]
+            let lastPeripherals = centralManager.retrieveConnectedPeripherals(withServices: serviceUUIDs as! [CBUUID] )
 
             if lastPeripherals.count > 0{
-                let device = lastPeripherals.last as CBPeripheral;
+                let device = lastPeripherals.last as! CBPeripheral;
                 connectingPeripheral = device;
-                centralManager.connectPeripheral(connectingPeripheral, options: nil)
+                centralManager.connect(connectingPeripheral, options: nil)
             }
             else {
-                centralManager.scanForPeripheralsWithServices(serviceUUIDs, options: nil)
+                centralManager.scanForPeripherals(withServices: serviceUUIDs as? [CBUUID], options: nil)
             }
 
         default:
-            println(central.state)
+            print(central.state)
         }
     }
-
-
-    func centralManager(central: CBCentralManager!, didDiscoverPeripheral peripheral: CBPeripheral!, advertisementData: [NSObject : AnyObject]!, RSSI: NSNumber!) {
-
+    
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         connectingPeripheral = peripheral
         connectingPeripheral.delegate = self
-        centralManager.connectPeripheral(connectingPeripheral, options: nil)
+        centralManager.connect(connectingPeripheral, options: nil)
     }
-
-    func centralManager(central: CBCentralManager!, didConnectPeripheral peripheral: CBPeripheral!) {
-
-        peripheral.discoverServices(nil)
+    
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        print("Connect success!")
+        let serviceUUIDs:[AnyObject] = [CBUUID(string: "181B")]
+        connectingPeripheral.discoverServices(serviceUUIDs as! [CBUUID])
     }
+    
+}
 
-    func peripheral(peripheral: CBPeripheral!, didDiscoverServices error: NSError!) {
-
-        if let actualError = error{
-
+//　ペリフェラル側
+extension HumidityViewController {
+    
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+        guard let services = peripheral.services else{
+            print("error")
+            return
         }
-        else {
-            for service in peripheral.services as [CBService]!{
-                peripheral.discoverCharacteristics(nil, forService: service)
-            }
-        }
+        print("\(services.count)個のサービスを発見。\(services)")
+        
+        let characteristicUUIDs: [AnyObject] = [CBUUID(string: "2A3B")]
+        connectingPeripheral.discoverCharacteristics(characteristicUUIDs as! [CBUUID],
+                                           for: (peripheral.services?.first)!)
     }
-
-    func peripheral(peripheral: CBPeripheral!, didUpdateValueForCharacteristic characteristic: CBCharacteristic!, error: NSError!) {
-
-        if let actualError = error{
-
-        }else {
-            switch characteristic.UUID.UUIDString{
-            case "2A37":
-                update(heartRateData:characteristic.value)
-
-            default:
-                println()
-            }
+    
+    /// キャラクタリスティクス発見時に呼ばれる
+    func peripheral(_ peripheral: CBPeripheral,
+                    didDiscoverCharacteristicsFor service: CBService,
+                    error: Error?) {
+        print("discover characteristics!")
+        print(service.characteristics)
+        if error != nil {
+            print(error.debugDescription)
+            return
         }
-        // update status.humidity in update()
+        
+        peripheral.setNotifyValue(true,
+                                  for: (service.characteristics?.first)!)
     }
+    
+    // データ更新時に呼ばれる
+    func peripheral(_ peripheral: CBPeripheral,
+                    didUpdateValueFor characteristic: CBCharacteristic,
+                    error: Error?) {
+        print("update characteristics value")
+        if error != nil {
+            print(error.debugDescription)
+            return
+        }
+        
+        update(humidData:characteristic.value! as NSData)
+    }
+}
 
-    func update(#humidData:NSData){
-
-        var buffer = [UInt8](count: humidData.length, repeatedValue: 0x00)
+extension HumidityViewController {
+    
+    func update(humidData:NSData){
+        
+        var buffer = [UInt8](repeating: 0x00, count: humidData.length)
         humidData.getBytes(&buffer, length: buffer.count)
-
+        
         var humidity:UInt16?
         if (buffer.count >= 2){
             if (buffer[0] & 0x01 == 0){
@@ -140,29 +166,14 @@ class HumidityViewController: UIViewController, CBCentralManagerDelegate, CBPeri
                 humidity =  humidity! | UInt16(buffer[2])
             }
         }
-
+        
         if let actualHumidity = humidity{
-            println(actualHumidity)
-            status.humidity = actualHumidity
+            print(actualHumidity)
+            status.humidity = Double(actualHumidity)
         }else {
-            println(humidity)
-            status.humidity = humidity
+            print(humidity)
+            status.humidity = Double(humidity!)
         }
     }
-
-    func peripheral(peripheral: CBPeripheral!, didUpdateValueForCharacteristic characteristic: CBCharacteristic!, error: NSError!) {
-
-        if let actualError = error{
-
-        }else {
-            switch characteristic.UUID.UUIDString{
-            case "2A37":
-                update(heartRateData:characteristic.value)
-
-            default:
-                println()
-            }
-        }
-    }
+    
 }
-
