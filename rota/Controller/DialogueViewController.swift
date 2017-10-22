@@ -70,7 +70,16 @@ extension DialogueViewController {
     
     //各送信者の表示に画像を使うか
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
-        let image = UIImage(named: "talkDoctor.png")
+        
+        let message = messages[indexPath.row]
+        let image: UIImage!
+        
+        if message.senderId == "2" {
+            image = UIImage(named: "talkDoctor.png")
+        } else {
+            image = UIImage(named: "human.png")
+        }
+        
         return JSQMessagesAvatarImageFactory.avatarImage(with: image, diameter: 30)
     }
     
@@ -81,9 +90,9 @@ extension DialogueViewController {
         let message = messages[indexPath.row]
         
         if message.senderId == "1" {
-            return bubbleFactory?.outgoingMessagesBubbleImage(with: .green)
+            return bubbleFactory?.outgoingMessagesBubbleImage(with: UIColor.rotaLightBlue)
         } else {
-            return bubbleFactory?.incomingMessagesBubbleImage(with: UIColor.rotaLightBlue)
+            return bubbleFactory?.incomingMessagesBubbleImage(with: UIColor.rotaDeepBlue)
         }
     }
     
@@ -114,28 +123,26 @@ extension DialogueViewController {
         let btnHeight: CGFloat = 75
         
         let yesBtn = UIButton(frame: CGRect(x: width/2-btnWidth/3*4, y: height/2+btnHeight*2.5+10,
-                                            width: btnWidth, height: btnHeight))
+                                            width: btnWidth, height: btnHeight-20))
         yesBtn.setTitle("YES", for: .normal)
         yesBtn.titleLabel?.font = UIFont(name: "Arial Rounded MT Bold", size: 24)
         yesBtn.backgroundColor = UIColor.rotaRed
         yesBtn.addTarget(self, action: #selector(self.yes(_:)), for: .touchUpInside)
-        yesBtn.layer.cornerRadius = 2.0
+        yesBtn.layer.cornerRadius = 20.0
         yesBtn.layer.masksToBounds = true
         self.view.addSubview(yesBtn)
         
         let noBtn = UIButton(frame: CGRect(x: width/2+btnWidth/3, y: height/2+btnHeight*2.5+10,
-                                            width: btnWidth, height: btnHeight))
+                                            width: btnWidth, height: btnHeight-20))
         noBtn.setTitle("NO", for: .normal)
         noBtn.backgroundColor = UIColor.rotaLightBlue
         noBtn.addTarget(self, action: #selector(self.no(_:)), for: .touchUpInside)
         noBtn.titleLabel?.font = UIFont(name: "Arial Rounded MT Bold", size: 24)
-        noBtn.layer.cornerRadius = 2.0
+        noBtn.layer.cornerRadius = 20.0
         noBtn.layer.masksToBounds = true
 
         self.view.addSubview(noBtn)
         
-        sendNextMessage()
-        sendNextMessage()
         sendNextMessage()
     }
 }
@@ -178,8 +185,8 @@ extension DialogueViewController {
         let message4 = JSQMessage(senderId: "2", displayName: "doctor",
                                   text: "Does your baby seem sluggish or unresponsive?")
         
-        messages.append(message0!)
-        messages.append(message1!)
+        //messages.append(message0!)
+        //messages.append(message1!)
         messages.append(message2!)
         messages.append(message3!)
         messages.append(message4!)
@@ -188,7 +195,7 @@ extension DialogueViewController {
     // 次のメッセージを表示
     // 返答の時はcountしない
     func sendNextMessage(isReply: Bool = false) {
-        if count == 8 {
+        if count == 6 {
             SCLAlertView().showSuccess("OK", subTitle: "Your baby seems alright. However, you SHOULD wash your hands. ")
             return
         }
