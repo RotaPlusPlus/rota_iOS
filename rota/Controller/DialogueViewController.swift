@@ -16,6 +16,14 @@ struct User {
 
 class DialogueViewController: JSQMessagesViewController {
     
+    let screenSize = UIScreen.main.bounds.size
+    var height: CGFloat {
+        return screenSize.height
+    }
+    var width: CGFloat {
+        return screenSize.width
+    }
+    
     let user1 = User(id: "1", name: "doctor")
     let user2 = User(id: "2", name: "yoshimaro")
     
@@ -97,12 +105,30 @@ extension DialogueViewController {
         
         //   メッセージ取得の関数（真下）呼び出し
         initializeMessageArray()
+        
+        //   ボタン生成
+        let btnWidth: CGFloat = 100
+        let btnHeight: CGFloat = 50
+        
+        var yesBtn = UIButton(frame: CGRect(x: width/2+btnWidth/3, y: height/2+btnHeight,
+                                            width: btnWidth, height: btnHeight))
+        yesBtn.setTitle("YES", for: .normal)
+        yesBtn.backgroundColor = UIColor.red
+        yesBtn.addTarget(self, action: #selector(self.btn(_:)), for: .touchUpInside)
+        self.view.addSubview(yesBtn)
+        
+        var noBtn = UIButton(frame: CGRect(x: width/2+btnWidth/3, y: height/2+btnHeight+btnHeight+10,
+                                            width: btnWidth, height: btnHeight))
+        noBtn.setTitle("NO", for: .normal)
+        noBtn.backgroundColor = UIColor.red
+        noBtn.addTarget(self, action: #selector(self.btn(_:)), for: .touchUpInside)
+        self.view.addSubview(noBtn)
     }
 }
 
 extension DialogueViewController {
     
-    @IBAction func btn() {
+    @objc func btn(_ sender: AnyObject) {
         sendNextMessage()
     }
     
