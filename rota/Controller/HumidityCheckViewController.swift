@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HumidityCheckController: UIViewController {
+class HumidityCheckViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

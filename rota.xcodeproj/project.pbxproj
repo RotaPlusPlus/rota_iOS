@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		9AF6E86C1F9C2D1400D794C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E86B1F9C2D1400D794C4 /* AppDelegate.swift */; };
-		9AF6E86E1F9C2D1400D794C4 /* HumidityCheckController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E86D1F9C2D1400D794C4 /* HumidityCheckController.swift */; };
+		9AF6E86E1F9C2D1400D794C4 /* HumidityCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E86D1F9C2D1400D794C4 /* HumidityCheckViewController.swift */; };
 		9AF6E8711F9C2D1400D794C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E86F1F9C2D1400D794C4 /* Main.storyboard */; };
 		9AF6E8731F9C2D1400D794C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E8721F9C2D1400D794C4 /* Assets.xcassets */; };
 		9AF6E8761F9C2D1400D794C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E8741F9C2D1400D794C4 /* LaunchScreen.storyboard */; };
 		9AF6E8811F9C2D1400D794C4 /* rotaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E8801F9C2D1400D794C4 /* rotaTests.swift */; };
 		9AF6E88C1F9C2D1400D794C4 /* rotaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E88B1F9C2D1400D794C4 /* rotaUITests.swift */; };
 		9AF6E89D1F9C4B0000D794C4 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E89C1F9C4B0000D794C4 /* Status.swift */; };
+		9AF6E89F1F9C51A900D794C4 /* DialogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E89E1F9C51A900D794C4 /* DialogueViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,7 @@
 /* Begin PBXFileReference section */
 		9AF6E8681F9C2D1400D794C4 /* rota.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rota.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF6E86B1F9C2D1400D794C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9AF6E86D1F9C2D1400D794C4 /* HumidityCheckController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityCheckController.swift; sourceTree = "<group>"; };
+		9AF6E86D1F9C2D1400D794C4 /* HumidityCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityCheckViewController.swift; sourceTree = "<group>"; };
 		9AF6E8701F9C2D1400D794C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9AF6E8721F9C2D1400D794C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9AF6E8751F9C2D1400D794C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		9AF6E88B1F9C2D1400D794C4 /* rotaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rotaUITests.swift; sourceTree = "<group>"; };
 		9AF6E88D1F9C2D1400D794C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AF6E89C1F9C4B0000D794C4 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		9AF6E89E1F9C51A900D794C4 /* DialogueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				9AF6E86B1F9C2D1400D794C4 /* AppDelegate.swift */,
-				9AF6E86F1F9C2D1400D794C4 /* Main.storyboard */,
 				9AF6E89B1F9C2EE500D794C4 /* View */,
 				9AF6E89A1F9C2EDB00D794C4 /* Controller */,
 				9AF6E8991F9C2ED500D794C4 /* Model */,
@@ -140,7 +141,8 @@
 		9AF6E89A1F9C2EDB00D794C4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9AF6E86D1F9C2D1400D794C4 /* HumidityCheckController.swift */,
+				9AF6E86D1F9C2D1400D794C4 /* HumidityCheckViewController.swift */,
+				9AF6E89E1F9C51A900D794C4 /* DialogueViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -148,6 +150,7 @@
 		9AF6E89B1F9C2EE500D794C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9AF6E86F1F9C2D1400D794C4 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -286,7 +289,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AF6E86E1F9C2D1400D794C4 /* HumidityCheckController.swift in Sources */,
+				9AF6E89F1F9C51A900D794C4 /* DialogueViewController.swift in Sources */,
+				9AF6E86E1F9C2D1400D794C4 /* HumidityCheckViewController.swift in Sources */,
 				9AF6E86C1F9C2D1400D794C4 /* AppDelegate.swift in Sources */,
 				9AF6E89D1F9C4B0000D794C4 /* Status.swift in Sources */,
 			);
