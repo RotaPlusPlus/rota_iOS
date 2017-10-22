@@ -25,14 +25,33 @@ class HumidityViewController: UIViewController, CBCentralManagerDelegate, CBPeri
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        animeView = BAFluidView(frame: self.view.frame, startElevation: 100)
+        animeView?.strokeColor = .white
+        view.addSubview(animeView!)
+        
+        view.sendSubview(toBack: animeView!)
+        centralManager = CBCentralManager(delegate: self, queue: nil)
+        updateUIs()
+    }
+    
+    
+    private func updateUIs() {
+        updateLabel()
+        updateWaveHeight()
+        updateWaveAndLabelColor()
+    }
+    
+    private func updateLabel() {
         messageLabel.text = status.rank.rawValue
         humidityLabel.text = String(status.humidity) + " %"
-        
+    }
+    
+    private func updateWaveHeight() {
         let waveHeight = status.humidity / 100
-        animeView = BAFluidView(frame: self.view.frame, startElevation: waveHeight as NSNumber)
-        animeView?.fill(to: waveHeight as NSNumber)
-        animeView?.strokeColor = .white
-        
+        animeView.fill(to: waveHeight as NSNumber)
+    }
+    
+    private func updateWaveAndLabelColor() {
         if status.rank == .normal {
             colorChange(color: UIColor.rotaBlue)
         }
@@ -42,13 +61,9 @@ class HumidityViewController: UIViewController, CBCentralManagerDelegate, CBPeri
         else if status.rank == .dangerous {
             colorChange(color: UIColor.rotaRed)
         }
-        view.addSubview(animeView!)
-        
-        view.sendSubview(toBack: animeView!)
-        centralManager = CBCentralManager(delegate: self, queue: nil)
     }
     
-    func colorChange(color: UIColor) {
+    private func colorChange(color: UIColor) {
         animeView?.fillColor = color
         humidityLabel.textColor = color
         messageLabel.textColor = color
@@ -60,7 +75,6 @@ class HumidityViewController: UIViewController, CBCentralManagerDelegate, CBPeri
     }
 
     required init(coder aDecoder: NSCoder) {
-
         super.init(coder: aDecoder)!
         centralManager = CBCentralManager(delegate: self, queue: DispatchQueue.main)
     }
@@ -173,6 +187,8 @@ extension HumidityViewController {
             print(humidity)
             status.humidity = Double(humidity!)
         }
+        
+        updateUIs()
     }
     
 }
