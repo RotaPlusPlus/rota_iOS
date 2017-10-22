@@ -26,7 +26,16 @@ class HumidityViewController: UIViewController {
         let animeView = BAFluidView(frame: self.view.frame, startElevation: waveHeight as NSNumber)
         animeView?.fill(to: waveHeight as NSNumber)
         animeView?.strokeColor = .white
-        animeView?.fillColor = UIColor(red: 18/255, green: 97/255, blue: 101/255, alpha: 1.0)
+        
+        if status.rank == .normal {
+            animeView?.fillColor = UIColor(red: 18/255, green: 97/255, blue: 101/255, alpha: 1.0)
+        }
+        else if status.rank == .careful {
+            animeView?.fillColor = UIColor(red: 244/255, green: 191/255, blue: 31/255, alpha: 1.0)
+        }
+        else if status.rank == .dangerous {
+            animeView?.fillColor = UIColor(red: 233/255, green: 68/255, blue: 28/255, alpha: 1.0)
+        }
         view.addSubview(animeView!)
         view.sendSubview(toBack: animeView!)
     }
