@@ -16,7 +16,7 @@ struct User {
 
 class DialogueViewController: JSQMessagesViewController {
     
-    let user1 = User(id: "1", name: "doctoe")
+    let user1 = User(id: "1", name: "doctor")
     let user2 = User(id: "2", name: "yoshimaro")
     
     var currentUser: User {
@@ -24,6 +24,8 @@ class DialogueViewController: JSQMessagesViewController {
     }
     
     var messages = [JSQMessage]()
+    var displayMessages = [JSQMessage]()
+    var count = 0
     
 }
 
@@ -33,7 +35,7 @@ extension DialogueViewController {
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         let message = JSQMessage(senderId: senderId, displayName: senderDisplayName, text: text)
         
-        messages.append(message!)
+        displayMessages.append(message!)
         
         finishSendingMessage()
     }
@@ -76,12 +78,12 @@ extension DialogueViewController {
     
     //   メッセージの総数を取得
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return messages.count
+        return displayMessages.count
     }
     
     //   メッセージの内容参照場所の設定
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
-        return messages[indexPath.row]
+        return displayMessages[indexPath.row]
     }
 }
 
@@ -94,22 +96,44 @@ extension DialogueViewController {
         self.senderDisplayName = currentUser.name
         
         //   メッセージ取得の関数（真下）呼び出し
-        self.messages = getMessages()
+        initializeMessageArray()
     }
 }
 
 extension DialogueViewController {
-    //   テストメッセージ作成、呼び出し関数作成
-    func getMessages() -> [JSQMessage] {
-        var messages = [JSQMessage]()
+    
+    @IBAction func btn() {
+        sendNextMessage()
+    }
+    
+}
+
+
+extension DialogueViewController {
+    
+    //   メッセージ配列を初期化、呼び出し関数作成
+    func initializeMessageArray() {
+        // 初期化
+        messages = [JSQMessage]()
+        displayMessages = [JSQMessage]()
         
-        let message1 = JSQMessage(senderId: "1", displayName: "yatsure", text: "こんにちわ")
-        let message2 = JSQMessage(senderId: "2", displayName: "yoshimaro", text: "せやかて工藤")
+        let message1 = JSQMessage(senderId: "2", displayName: "doctor", text: "こんにちわ")
+        let message2 = JSQMessage(senderId: "2", displayName: "doctor", text: "どういった症状ですか")
         
         messages.append(message1!)
         messages.append(message2!)
+        for _ in (1...10) {
+            messages.append(message1!)
+        }
         
-        return messages
     }
+    
+    // 次のメッセージを表示
+    func sendNextMessage() {
+        count += 1
+        displayMessages.append(messages[count])
+        finishReceivingMessage(animated: true)
+    }
+    
 }
 

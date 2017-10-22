@@ -10,7 +10,7 @@
 		53B98F69EF19959A57D4F8EB /* Pods_rotaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056EFEA4E6D50048C733A334 /* Pods_rotaTests.framework */; };
 		55E67145AD43B7ED650CD172 /* Pods_rota.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88563B4D95A49D5D9E47FEA6 /* Pods_rota.framework */; };
 		9AF6E86C1F9C2D1400D794C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E86B1F9C2D1400D794C4 /* AppDelegate.swift */; };
-		9AF6E86E1F9C2D1400D794C4 /* HumidityCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E86D1F9C2D1400D794C4 /* HumidityCheckViewController.swift */; };
+		9AF6E86E1F9C2D1400D794C4 /* HumidityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E86D1F9C2D1400D794C4 /* HumidityViewController.swift */; };
 		9AF6E8711F9C2D1400D794C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E86F1F9C2D1400D794C4 /* Main.storyboard */; };
 		9AF6E8731F9C2D1400D794C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E8721F9C2D1400D794C4 /* Assets.xcassets */; };
 		9AF6E8761F9C2D1400D794C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E8741F9C2D1400D794C4 /* LaunchScreen.storyboard */; };
@@ -18,9 +18,12 @@
 		9AF6E88C1F9C2D1400D794C4 /* rotaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E88B1F9C2D1400D794C4 /* rotaUITests.swift */; };
 		9AF6E89D1F9C4B0000D794C4 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E89C1F9C4B0000D794C4 /* Status.swift */; };
 		9AF6E89F1F9C51A900D794C4 /* DialogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E89E1F9C51A900D794C4 /* DialogueViewController.swift */; };
-		9AF6E8A41F9C816F00D794C4 /* doctorIcon30_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E8A11F9C80AB00D794C4 /* doctorIcon30_30.png */; };
-		9AF6E8A51F9C817200D794C4 /* humidIcon30_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E8A31F9C80AB00D794C4 /* humidIcon30_30.png */; };
-		9AF6E8A61F9C817400D794C4 /* talkIcon30_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E8A21F9C80AB00D794C4 /* talkIcon30_30.png */; };
+		9AF6E8A41F9C816F00D794C4 /* doctorIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E8A11F9C80AB00D794C4 /* doctorIcon.png */; };
+		9AF6E8A51F9C817200D794C4 /* humidIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E8A31F9C80AB00D794C4 /* humidIcon.png */; };
+		9AF6E8A61F9C817400D794C4 /* talkIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E8A21F9C80AB00D794C4 /* talkIcon.png */; };
+		9AF6E8A81F9C8FD400D794C4 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E8A71F9C8FD400D794C4 /* MainTabViewController.swift */; };
+		9AF6E8AC1F9C90A600D794C4 /* Humidity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E8AB1F9C90A600D794C4 /* Humidity.storyboard */; };
+		9AF6E8E81F9C998700D794C4 /* Dialogue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E8E71F9C998700D794C4 /* Dialogue.storyboard */; };
 		E0D2C2548804F5594C317F06 /* Pods_rotaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F6CA4EFAE1E7AD624CBF84 /* Pods_rotaUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +55,7 @@
 		88563B4D95A49D5D9E47FEA6 /* Pods_rota.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rota.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF6E8681F9C2D1400D794C4 /* rota.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rota.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF6E86B1F9C2D1400D794C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9AF6E86D1F9C2D1400D794C4 /* HumidityCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityCheckViewController.swift; sourceTree = "<group>"; };
+		9AF6E86D1F9C2D1400D794C4 /* HumidityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityViewController.swift; sourceTree = "<group>"; };
 		9AF6E8701F9C2D1400D794C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9AF6E8721F9C2D1400D794C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9AF6E8751F9C2D1400D794C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,9 +68,12 @@
 		9AF6E88D1F9C2D1400D794C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AF6E89C1F9C4B0000D794C4 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		9AF6E89E1F9C51A900D794C4 /* DialogueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueViewController.swift; sourceTree = "<group>"; };
-		9AF6E8A11F9C80AB00D794C4 /* doctorIcon30_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doctorIcon30_30.png; sourceTree = "<group>"; };
-		9AF6E8A21F9C80AB00D794C4 /* talkIcon30_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = talkIcon30_30.png; sourceTree = "<group>"; };
-		9AF6E8A31F9C80AB00D794C4 /* humidIcon30_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = humidIcon30_30.png; sourceTree = "<group>"; };
+		9AF6E8A11F9C80AB00D794C4 /* doctorIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doctorIcon.png; sourceTree = "<group>"; };
+		9AF6E8A21F9C80AB00D794C4 /* talkIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = talkIcon.png; sourceTree = "<group>"; };
+		9AF6E8A31F9C80AB00D794C4 /* humidIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = humidIcon.png; sourceTree = "<group>"; };
+		9AF6E8A71F9C8FD400D794C4 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		9AF6E8AB1F9C90A600D794C4 /* Humidity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Humidity.storyboard; sourceTree = "<group>"; };
+		9AF6E8E71F9C998700D794C4 /* Dialogue.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dialogue.storyboard; sourceTree = "<group>"; };
 		D67FE672C7A4D023A98A4897 /* Pods-rota.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rota.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rota/Pods-rota.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,7 +171,8 @@
 		9AF6E89A1F9C2EDB00D794C4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9AF6E86D1F9C2D1400D794C4 /* HumidityCheckViewController.swift */,
+				9AF6E8A71F9C8FD400D794C4 /* MainTabViewController.swift */,
+				9AF6E86D1F9C2D1400D794C4 /* HumidityViewController.swift */,
 				9AF6E89E1F9C51A900D794C4 /* DialogueViewController.swift */,
 			);
 			path = Controller;
@@ -175,6 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				9AF6E86F1F9C2D1400D794C4 /* Main.storyboard */,
+				9AF6E8AB1F9C90A600D794C4 /* Humidity.storyboard */,
+				9AF6E8E71F9C998700D794C4 /* Dialogue.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -182,9 +191,9 @@
 		9AF6E8A01F9C809000D794C4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				9AF6E8A11F9C80AB00D794C4 /* doctorIcon30_30.png */,
-				9AF6E8A31F9C80AB00D794C4 /* humidIcon30_30.png */,
-				9AF6E8A21F9C80AB00D794C4 /* talkIcon30_30.png */,
+				9AF6E8A11F9C80AB00D794C4 /* doctorIcon.png */,
+				9AF6E8A31F9C80AB00D794C4 /* humidIcon.png */,
+				9AF6E8A21F9C80AB00D794C4 /* talkIcon.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -329,11 +338,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AF6E8761F9C2D1400D794C4 /* LaunchScreen.storyboard in Resources */,
-				9AF6E8A51F9C817200D794C4 /* humidIcon30_30.png in Resources */,
-				9AF6E8A61F9C817400D794C4 /* talkIcon30_30.png in Resources */,
+				9AF6E8A51F9C817200D794C4 /* humidIcon.png in Resources */,
+				9AF6E8A61F9C817400D794C4 /* talkIcon.png in Resources */,
 				9AF6E8731F9C2D1400D794C4 /* Assets.xcassets in Resources */,
+				9AF6E8E81F9C998700D794C4 /* Dialogue.storyboard in Resources */,
 				9AF6E8711F9C2D1400D794C4 /* Main.storyboard in Resources */,
-				9AF6E8A41F9C816F00D794C4 /* doctorIcon30_30.png in Resources */,
+				9AF6E8AC1F9C90A600D794C4 /* Humidity.storyboard in Resources */,
+				9AF6E8A41F9C816F00D794C4 /* doctorIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,8 +507,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AF6E8A81F9C8FD400D794C4 /* MainTabViewController.swift in Sources */,
 				9AF6E89F1F9C51A900D794C4 /* DialogueViewController.swift in Sources */,
-				9AF6E86E1F9C2D1400D794C4 /* HumidityCheckViewController.swift in Sources */,
+				9AF6E86E1F9C2D1400D794C4 /* HumidityViewController.swift in Sources */,
 				9AF6E86C1F9C2D1400D794C4 /* AppDelegate.swift in Sources */,
 				9AF6E89D1F9C4B0000D794C4 /* Status.swift in Sources */,
 			);

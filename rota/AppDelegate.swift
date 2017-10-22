@@ -13,34 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:[UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        // ページを格納する配列
-        var viewControllers: [UIViewController] = []
-        
-        // 1ページ目になるViewController
-        let firstVC = HumidityCheckViewController()
-        let firstImage = UIImage(named: "humidIcon30_30.png")
-        firstVC.tabBarItem = UITabBarItem(title: "humid", image: firstImage, tag: 1)
-        viewControllers.append(firstVC)
-        
-        // 2ページ目になるViewController
-        let secondVC = DialogueViewController()
-        let secondImage = UIImage(named: "doctorIcon30_30.png")
-        secondVC.tabBarItem = UITabBarItem(title: "talk", image: secondImage, tag: 2)
-        viewControllers.append(secondVC)
-        
-        // ページをセット
-        let tabBarController = UITabBarController()
-        tabBarController.setViewControllers(viewControllers, animated: false)
-        
-        // ルートを UITabBarController にする
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = UIColor.white
-        window?.rootViewController = tabBarController
-        window?.makeKeyAndVisible()
-        
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
         return true
     }
 
