@@ -80,7 +80,7 @@ extension DialogueViewController {
         
         let message = messages[indexPath.row]
         
-        if currentUser.id == message.senderId {
+        if message.senderId == "1" {
             return bubbleFactory?.outgoingMessagesBubbleImage(with: .green)
         } else {
             return bubbleFactory?.incomingMessagesBubbleImage(with: UIColor.rotaLightBlue)
@@ -144,10 +144,19 @@ extension DialogueViewController {
     
     @objc func yes(_ sender: AnyObject) {
         SCLAlertView().showWarning("Warning", subTitle: "Your baby might be Dehydration or have RotaVirus. \n You should take your baby to the nearest hospital ASAP with the pacifier in the package. \n You should be careful about secondary infection. WASH YOUR HANDS!!")
+        
+//        let yesMessage = JSQMessage(senderId: "1", displayName: "you",
+//                                    text: "YES")
+//        sendNextMessage(isReply: true)
+//        sendNextMessage(isReply: false)
     }
     
     @objc func no(_ sender: AnyObject) {
-        sendNextMessage()
+        let noMessage = JSQMessage(senderId: "1", displayName: "you",
+                                   text: "NO")
+        messages.insert(noMessage!, at: count)
+        sendNextMessage(isReply: true)
+        sendNextMessage(isReply: false)
     }
 }
 
@@ -177,8 +186,9 @@ extension DialogueViewController {
     }
     
     // 次のメッセージを表示
-    func sendNextMessage() {
-        if count == messages.count {
+    // 返答の時はcountしない
+    func sendNextMessage(isReply: Bool = false) {
+        if count == 8 {
             SCLAlertView().showSuccess("OK", subTitle: "Your baby seems alright. However, you SHOULD wash your hands. ")
             return
         }
