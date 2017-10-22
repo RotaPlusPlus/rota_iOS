@@ -8,6 +8,7 @@
 
 import UIKit
 import BAFluidView
+import CoreBluetooth
 
 class HumidityViewController: UIViewController {
 
@@ -28,6 +29,12 @@ class HumidityViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func peripheral(peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
+        
+        //  WRITEME
+        // status.humidity = ここ！！！
+        
+    }
 
 }
 
