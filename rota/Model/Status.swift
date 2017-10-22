@@ -28,7 +28,12 @@ class Status {
         }
     }
     
-    init(humidity: Double) {
-        self.humidity = humidity
+    init() {
+        self.humidity = 0.0
+        getHumidity()
+    }
+    
+    func getHumidity() {
+        self.humidity = 1.0
     }
 }

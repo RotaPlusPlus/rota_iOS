@@ -10,9 +10,14 @@ import UIKit
 
 class HumidityViewController: UIViewController {
 
+    @IBOutlet var messageLabel: UILabel!
+    var status = Status()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        status.getHumidity()
+        messageLabel.text = status.rank.rawValue
     }
 
     override func didReceiveMemoryWarning() {
