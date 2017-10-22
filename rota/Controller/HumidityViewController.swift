@@ -25,7 +25,7 @@ class HumidityViewController: UIViewController, CBCentralManagerDelegate, CBPeri
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        animeView = BAFluidView(frame: self.view.frame, startElevation: status.humidity as NSNumber)
+        animeView = BAFluidView(frame: self.view.frame, startElevation: status.humidity/100 as NSNumber)
         animeView?.strokeColor = .white
         messageLabel.layer.borderColor = UIColor.white.cgColor
         messageLabel.layer.borderWidth = 1.0
