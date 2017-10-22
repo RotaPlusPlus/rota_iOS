@@ -8,6 +8,8 @@
 
 import UIKit
 import JSQMessagesViewController
+import SVProgressHUD
+import SCLAlertView
 
 struct User {
     let id: String
@@ -110,28 +112,35 @@ extension DialogueViewController {
         let btnWidth: CGFloat = 100
         let btnHeight: CGFloat = 50
         
-        let yesBtn = UIButton(frame: CGRect(x: width/2+btnWidth/3, y: height/2+btnHeight,
+        let yesBtn = UIButton(frame: CGRect(x: width/2+btnWidth/3, y: height/2+btnHeight*1.5,
                                             width: btnWidth, height: btnHeight))
         yesBtn.setTitle("YES", for: .normal)
         yesBtn.backgroundColor = UIColor.red
-        yesBtn.addTarget(self, action: #selector(self.btn(_:)), for: .touchUpInside)
+        yesBtn.addTarget(self, action: #selector(self.yes(_:)), for: .touchUpInside)
         self.view.addSubview(yesBtn)
         
-        let noBtn = UIButton(frame: CGRect(x: width/2+btnWidth/3, y: height/2+btnHeight+btnHeight+10,
+        let noBtn = UIButton(frame: CGRect(x: width/2+btnWidth/3, y: height/2+btnHeight*2.5+10,
                                             width: btnWidth, height: btnHeight))
         noBtn.setTitle("NO", for: .normal)
         noBtn.backgroundColor = UIColor.red
-        noBtn.addTarget(self, action: #selector(self.btn(_:)), for: .touchUpInside)
+        noBtn.addTarget(self, action: #selector(self.no(_:)), for: .touchUpInside)
         self.view.addSubview(noBtn)
+        
+        sendNextMessage()
+        sendNextMessage()
+        sendNextMessage()
     }
 }
 
 extension DialogueViewController {
     
-    @objc func btn(_ sender: AnyObject) {
-        sendNextMessage()
+    @objc func yes(_ sender: AnyObject) {
+        SCLAlertView().showWarning("Warning", subTitle: "Your baby might be Dehydration or have RotaVirus. \n You should take your baby to the nearest hospital ASAP with the pacifier in the package. \n You should be careful about secondary infection. WASH YOUR HANDS!!")
     }
     
+    @objc func no(_ sender: AnyObject) {
+        sendNextMessage()
+    }
 }
 
 
@@ -143,14 +152,16 @@ extension DialogueViewController {
         messages = [JSQMessage]()
         displayMessages = [JSQMessage]()
         
-        let message1 = JSQMessage(senderId: "2", displayName: "doctor", text: "Hi")
+        let message0 = JSQMessage(senderId: "2", displayName: "doctor", text: "Hi")
+        let message1 = JSQMessage(senderId: "2", displayName: "doctor", text: "Please answer some questions to see your baby's condtion.")
         let message2 = JSQMessage(senderId: "2", displayName: "doctor",
                                   text: "Does your baby have fever or diarrhea?")
         let message3 = JSQMessage(senderId: "2", displayName: "doctor",
-                                  text: "s your baby refusing food or drink?")
+                                  text: "Is your baby refusing food or drink?")
         let message4 = JSQMessage(senderId: "2", displayName: "doctor",
                                   text: "Does your baby seem sluggish or unresponsive?")
         
+        messages.append(message0!)
         messages.append(message1!)
         messages.append(message2!)
         messages.append(message3!)
@@ -159,9 +170,14 @@ extension DialogueViewController {
     
     // 次のメッセージを表示
     func sendNextMessage() {
-        count += 1
+        if count == messages.count {
+            SCLAlertView().showSuccess("OK", subTitle: "Your baby seems alright.")
+            return
+        }
+        
         displayMessages.append(messages[count])
         finishReceivingMessage(animated: true)
+        count += 1
     }
     
 }
