@@ -110,14 +110,14 @@ extension DialogueViewController {
         let btnWidth: CGFloat = 100
         let btnHeight: CGFloat = 50
         
-        var yesBtn = UIButton(frame: CGRect(x: width/2+btnWidth/3, y: height/2+btnHeight,
+        let yesBtn = UIButton(frame: CGRect(x: width/2+btnWidth/3, y: height/2+btnHeight,
                                             width: btnWidth, height: btnHeight))
         yesBtn.setTitle("YES", for: .normal)
         yesBtn.backgroundColor = UIColor.red
         yesBtn.addTarget(self, action: #selector(self.btn(_:)), for: .touchUpInside)
         self.view.addSubview(yesBtn)
         
-        var noBtn = UIButton(frame: CGRect(x: width/2+btnWidth/3, y: height/2+btnHeight+btnHeight+10,
+        let noBtn = UIButton(frame: CGRect(x: width/2+btnWidth/3, y: height/2+btnHeight+btnHeight+10,
                                             width: btnWidth, height: btnHeight))
         noBtn.setTitle("NO", for: .normal)
         noBtn.backgroundColor = UIColor.red
@@ -143,15 +143,18 @@ extension DialogueViewController {
         messages = [JSQMessage]()
         displayMessages = [JSQMessage]()
         
-        let message1 = JSQMessage(senderId: "2", displayName: "doctor", text: "こんにちわ")
-        let message2 = JSQMessage(senderId: "2", displayName: "doctor", text: "どういった症状ですか")
+        let message1 = JSQMessage(senderId: "2", displayName: "doctor", text: "Hi")
+        let message2 = JSQMessage(senderId: "2", displayName: "doctor",
+                                  text: "Does your baby have fever or diarrhea?")
+        let message3 = JSQMessage(senderId: "2", displayName: "doctor",
+                                  text: "s your baby refusing food or drink?")
+        let message4 = JSQMessage(senderId: "2", displayName: "doctor",
+                                  text: "Does your baby seem sluggish or unresponsive?")
         
         messages.append(message1!)
         messages.append(message2!)
-        for _ in (1...10) {
-            messages.append(message1!)
-        }
-        
+        messages.append(message3!)
+        messages.append(message4!)
     }
     
     // 次のメッセージを表示
