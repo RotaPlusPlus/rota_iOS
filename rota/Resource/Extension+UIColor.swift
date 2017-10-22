@@ -10,8 +10,12 @@ import UIKit
 
 extension UIColor {
     
-    static var rotaBlue: UIColor {
+    static var rotaDeepBlue: UIColor {
         return UIColor(red: 18/255, green: 97/255, blue: 101/255, alpha: 1.0)
+    }
+    
+    static var rotaLightBlue: UIColor {
+        return UIColor(red: 45/255, green: 147/255, blue: 149/255, alpha: 1.0)
     }
     
     static var rotaYellow: UIColor {

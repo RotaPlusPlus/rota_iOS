@@ -123,7 +123,7 @@ extension DialogueViewController {
         let noBtn = UIButton(frame: CGRect(x: width/2+btnWidth/3, y: height/2+btnHeight*2.5+10,
                                             width: btnWidth, height: btnHeight))
         noBtn.setTitle("NO", for: .normal)
-        noBtn.backgroundColor = UIColor.rotaBlue
+        noBtn.backgroundColor = UIColor.rotaLightBlue
         noBtn.addTarget(self, action: #selector(self.no(_:)), for: .touchUpInside)
         self.view.addSubview(noBtn)
         

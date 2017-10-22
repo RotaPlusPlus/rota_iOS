@@ -53,7 +53,7 @@ class HumidityViewController: UIViewController, CBCentralManagerDelegate, CBPeri
     
     private func updateWaveAndLabelColor() {
         if status.rank == .normal {
-            colorChange(color: UIColor.rotaBlue)
+            colorChange(color: UIColor.rotaDeepBlue)
         }
         else if status.rank == .careful {
             colorChange(color: UIColor.rotaYellow)
