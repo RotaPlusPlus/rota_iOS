@@ -1,0 +1,6 @@
+framework module Pods_rotaUITests {
+  umbrella header "Pods-rotaUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

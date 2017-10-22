@@ -1,0 +1,6 @@
+framework module Pods_rota {
+  umbrella header "Pods-rota-umbrella.h"
+
+  export *
+  module * { export * }
+}
