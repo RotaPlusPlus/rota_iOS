@@ -19,6 +19,6 @@ extension UIColor {
     }
     
     static var rotaRed: UIColor {
-        return UIColor(red: 244/255, green: 191/255, blue: 31/255, alpha: 1.0)
+        return UIColor(red: 233/255, green: 68/255, blue: 28/255, alpha: 1.0)
     }
 }
