@@ -17,10 +17,10 @@ enum Rank: String {
 class Status {
     var humidity: Double
     var rank: Rank {
-        if self.humidity > 0.5 {
+        if self.humidity > 50 {
             return .Normal
         }
-        else if self.humidity > 0.3 {
+        else if self.humidity > 30 {
             return .Careful
         }
         else {
@@ -28,12 +28,7 @@ class Status {
         }
     }
     
-    init() {
-        self.humidity = 0.0
-        getHumidity()
-    }
-    
-    func getHumidity() {
-        self.humidity = 1.0
+    init(humidity: Double) {
+        self.humidity = humidity
     }
 }

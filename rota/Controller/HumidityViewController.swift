@@ -13,15 +13,22 @@ import CoreBluetooth
 class HumidityViewController: UIViewController {
 
     @IBOutlet var messageLabel: UILabel!
-    var status = Status()
+    @IBOutlet var humidityLabel: UILabel!
+    var status = Status(humidity: 10)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        status.getHumidity()
         messageLabel.text = status.rank.rawValue
-        let animeView = BAFluidView(frame: self.view.frame,startElevation: 0.4)
+        humidityLabel.text = String(status.humidity) + " %"
+        
+        let waveHeight = status.humidity / 100
+        let animeView = BAFluidView(frame: self.view.frame, startElevation: waveHeight as NSNumber)
+        animeView?.fill(to: waveHeight as NSNumber)
+        animeView?.strokeColor = .white
+        animeView?.fillColor = UIColor(red: 18/255, green: 97/255, blue: 101/255, alpha: 1.0)
         view.addSubview(animeView!)
+        view.sendSubview(toBack: animeView!)
     }
 
     override func didReceiveMemoryWarning() {
