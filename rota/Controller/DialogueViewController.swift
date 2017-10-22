@@ -83,7 +83,7 @@ extension DialogueViewController {
         if currentUser.id == message.senderId {
             return bubbleFactory?.outgoingMessagesBubbleImage(with: .green)
         } else {
-            return bubbleFactory?.incomingMessagesBubbleImage(with: .blue)
+            return bubbleFactory?.incomingMessagesBubbleImage(with: UIColor.rotaLightBlue)
         }
     }
     
