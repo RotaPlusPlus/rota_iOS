@@ -171,7 +171,7 @@ extension DialogueViewController {
     // 次のメッセージを表示
     func sendNextMessage() {
         if count == messages.count {
-            SCLAlertView().showSuccess("OK", subTitle: "Your baby seems alright.")
+            SCLAlertView().showSuccess("OK", subTitle: "Your baby seems alright. However, you SHOULD wash your hands. ")
             return
         }
         
