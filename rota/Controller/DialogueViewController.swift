@@ -116,8 +116,11 @@ extension DialogueViewController {
         let yesBtn = UIButton(frame: CGRect(x: width/2-btnWidth/3*4, y: height/2+btnHeight*2.5+10,
                                             width: btnWidth, height: btnHeight))
         yesBtn.setTitle("YES", for: .normal)
+        yesBtn.titleLabel?.font = UIFont(name: "Arial Rounded MT Bold", size: 24)
         yesBtn.backgroundColor = UIColor.rotaRed
         yesBtn.addTarget(self, action: #selector(self.yes(_:)), for: .touchUpInside)
+        yesBtn.layer.cornerRadius = 2.0
+        yesBtn.layer.masksToBounds = true
         self.view.addSubview(yesBtn)
         
         let noBtn = UIButton(frame: CGRect(x: width/2+btnWidth/3, y: height/2+btnHeight*2.5+10,
@@ -125,6 +128,10 @@ extension DialogueViewController {
         noBtn.setTitle("NO", for: .normal)
         noBtn.backgroundColor = UIColor.rotaLightBlue
         noBtn.addTarget(self, action: #selector(self.no(_:)), for: .touchUpInside)
+        noBtn.titleLabel?.font = UIFont(name: "Arial Rounded MT Bold", size: 24)
+        noBtn.layer.cornerRadius = 2.0
+        noBtn.layer.masksToBounds = true
+
         self.view.addSubview(noBtn)
         
         sendNextMessage()
