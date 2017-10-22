@@ -11,7 +11,7 @@ import Foundation
 enum Rank: String {
     case normal = "OK"
     case careful = "Drink Water"
-    case dangerous = "Go to hospital"
+    case dangerous = "Go To Hospital"
 }
 
 class Status {
