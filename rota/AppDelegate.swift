@@ -21,12 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 1ページ目になるViewController
         let firstVC = HumidityCheckViewController()
-        firstVC.tabBarItem = UITabBarItem(title: "humid", image: nil, tag: 1)
+        let firstImage = UIImage(named: "humidIcon30_30.png")
+        firstVC.tabBarItem = UITabBarItem(title: "humid", image: firstImage, tag: 1)
         viewControllers.append(firstVC)
         
         // 2ページ目になるViewController
         let secondVC = DialogueViewController()
-        secondVC.tabBarItem = UITabBarItem(title: "talk", image: nil, tag: 2)
+        let secondImage = UIImage(named: "doctorIcon30_30.png")
+        secondVC.tabBarItem = UITabBarItem(title: "talk", image: secondImage, tag: 2)
         viewControllers.append(secondVC)
         
         // ページをセット
