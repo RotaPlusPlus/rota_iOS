@@ -111,19 +111,19 @@ extension DialogueViewController {
         
         //   ボタン生成
         let btnWidth: CGFloat = 100
-        let btnHeight: CGFloat = 50
+        let btnHeight: CGFloat = 75
         
-        let yesBtn = UIButton(frame: CGRect(x: width/2+btnWidth/3, y: height/2+btnHeight*1.5,
+        let yesBtn = UIButton(frame: CGRect(x: width/2-btnWidth/3*4, y: height/2+btnHeight*2.5+10,
                                             width: btnWidth, height: btnHeight))
         yesBtn.setTitle("YES", for: .normal)
-        yesBtn.backgroundColor = UIColor.red
+        yesBtn.backgroundColor = UIColor.rotaRed
         yesBtn.addTarget(self, action: #selector(self.yes(_:)), for: .touchUpInside)
         self.view.addSubview(yesBtn)
         
         let noBtn = UIButton(frame: CGRect(x: width/2+btnWidth/3, y: height/2+btnHeight*2.5+10,
                                             width: btnWidth, height: btnHeight))
         noBtn.setTitle("NO", for: .normal)
-        noBtn.backgroundColor = UIColor.red
+        noBtn.backgroundColor = UIColor.rotaBlue
         noBtn.addTarget(self, action: #selector(self.no(_:)), for: .touchUpInside)
         self.view.addSubview(noBtn)
         
