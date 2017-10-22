@@ -14,6 +14,7 @@
 		9AF6E8761F9C2D1400D794C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E8741F9C2D1400D794C4 /* LaunchScreen.storyboard */; };
 		9AF6E8811F9C2D1400D794C4 /* rotaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E8801F9C2D1400D794C4 /* rotaTests.swift */; };
 		9AF6E88C1F9C2D1400D794C4 /* rotaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E88B1F9C2D1400D794C4 /* rotaUITests.swift */; };
+		9AF6E89D1F9C4B0000D794C4 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E89C1F9C4B0000D794C4 /* Status.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		9AF6E8871F9C2D1400D794C4 /* rotaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rotaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF6E88B1F9C2D1400D794C4 /* rotaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rotaUITests.swift; sourceTree = "<group>"; };
 		9AF6E88D1F9C2D1400D794C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AF6E89C1F9C4B0000D794C4 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		9AF6E8991F9C2ED500D794C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9AF6E89C1F9C4B0000D794C4 /* Status.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			files = (
 				9AF6E86E1F9C2D1400D794C4 /* HumidityCheckController.swift in Sources */,
 				9AF6E86C1F9C2D1400D794C4 /* AppDelegate.swift in Sources */,
+				9AF6E89D1F9C4B0000D794C4 /* Status.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
