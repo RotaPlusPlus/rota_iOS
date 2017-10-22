@@ -1,4 +1,5 @@
 PODS:
+  - BAFluidView (0.2.3)
   - JSQMessagesViewController (7.3.5):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
@@ -6,6 +7,7 @@ PODS:
   - SVProgressHUD (2.2.2)
 
 DEPENDENCIES:
+  - BAFluidView
   - JSQMessagesViewController
   - SCLAlertView (from `https://github.com/vikmeup/SCLAlertView-Swift`)
   - SVProgressHUD
@@ -20,11 +22,12 @@ CHECKOUT OPTIONS:
     :git: https://github.com/vikmeup/SCLAlertView-Swift
 
 SPEC CHECKSUMS:
+  BAFluidView: 5d84ef109831b97740f75b6d785e51f13fa08398
   JSQMessagesViewController: 6587f56aedbcb150a8ba1d968e1ef58b1bc758b7
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
 
-PODFILE CHECKSUM: 6136cd0d0b09da18bd13feec50bf7b031cdf84b4
+PODFILE CHECKSUM: 0c129746a606491daef081e1eae4923647167b87
 
 COCOAPODS: 1.2.0

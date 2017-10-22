@@ -10,6 +10,7 @@ target 'rota' do
   pod 'JSQMessagesViewController'
   pod 'SVProgressHUD'
   pod 'SCLAlertView', :git => 'https://github.com/vikmeup/SCLAlertView-Swift'
+  pod 'BAFluidView'
   target 'rotaTests' do
     inherit! :search_paths
     # Pods for testing

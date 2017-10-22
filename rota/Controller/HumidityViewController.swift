@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BAFluidView
 
 class HumidityViewController: UIViewController {
 
@@ -18,6 +19,8 @@ class HumidityViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         status.getHumidity()
         messageLabel.text = status.rank.rawValue
+        let animeView = BAFluidView(frame: self.view.frame,startElevation: 0.4)
+        view.addSubview(animeView!)
     }
 
     override func didReceiveMemoryWarning() {

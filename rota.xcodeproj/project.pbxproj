@@ -24,6 +24,7 @@
 		9AF6E8A81F9C8FD400D794C4 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E8A71F9C8FD400D794C4 /* MainTabViewController.swift */; };
 		9AF6E8AC1F9C90A600D794C4 /* Humidity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E8AB1F9C90A600D794C4 /* Humidity.storyboard */; };
 		9AF6E8E81F9C998700D794C4 /* Dialogue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E8E71F9C998700D794C4 /* Dialogue.storyboard */; };
+		9AF6E8EC1F9CAF1900D794C4 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E8EB1F9CAF1100D794C4 /* bg.png */; };
 		E0D2C2548804F5594C317F06 /* Pods_rotaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F6CA4EFAE1E7AD624CBF84 /* Pods_rotaUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		9AF6E8A71F9C8FD400D794C4 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		9AF6E8AB1F9C90A600D794C4 /* Humidity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Humidity.storyboard; sourceTree = "<group>"; };
 		9AF6E8E71F9C998700D794C4 /* Dialogue.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dialogue.storyboard; sourceTree = "<group>"; };
+		9AF6E8EB1F9CAF1100D794C4 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg.png; path = ../../../../Downloads/bg.png; sourceTree = "<group>"; };
 		D67FE672C7A4D023A98A4897 /* Pods-rota.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rota.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rota/Pods-rota.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,6 +193,7 @@
 		9AF6E8A01F9C809000D794C4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				9AF6E8EB1F9CAF1100D794C4 /* bg.png */,
 				9AF6E8A11F9C80AB00D794C4 /* doctorIcon.png */,
 				9AF6E8A31F9C80AB00D794C4 /* humidIcon.png */,
 				9AF6E8A21F9C80AB00D794C4 /* talkIcon.png */,
@@ -339,6 +342,7 @@
 			files = (
 				9AF6E8761F9C2D1400D794C4 /* LaunchScreen.storyboard in Resources */,
 				9AF6E8A51F9C817200D794C4 /* humidIcon.png in Resources */,
+				9AF6E8EC1F9CAF1900D794C4 /* bg.png in Resources */,
 				9AF6E8A61F9C817400D794C4 /* talkIcon.png in Resources */,
 				9AF6E8731F9C2D1400D794C4 /* Assets.xcassets in Resources */,
 				9AF6E8E81F9C998700D794C4 /* Dialogue.storyboard in Resources */,
