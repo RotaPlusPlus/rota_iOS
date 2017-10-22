@@ -15,7 +15,6 @@ class HumidityViewController: UIViewController, CBCentralManagerDelegate, CBPeri
 
     var centralManager: CBCentralManager!
     var connectingPeripheral: CBPeripheral!
-    var peripheralManager: CBPeripheralManager!
 
     @IBOutlet var messageLabel: UILabel!
     @IBOutlet var humidityLabel: UILabel!
