@@ -9,22 +9,22 @@
 import Foundation
 
 enum Rank: String {
-    case Normal = "OK"
-    case Careful = "Drink Water"
-    case Dangerous = "Go to hospital"
+    case normal = "OK"
+    case careful = "Drink Water"
+    case dangerous = "Go to hospital"
 }
 
 class Status {
     var humidity: Double
     var rank: Rank {
         if self.humidity > 50 {
-            return .Normal
+            return .normal
         }
         else if self.humidity > 30 {
-            return .Careful
+            return .careful
         }
         else {
-            return .Dangerous
+            return .dangerous
         }
     }
     
