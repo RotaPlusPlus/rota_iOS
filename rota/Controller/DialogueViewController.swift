@@ -70,7 +70,8 @@ extension DialogueViewController {
     
     //各送信者の表示に画像を使うか
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
-        return nil
+        let image = UIImage(named: "talkDoctor.png")
+        return JSQMessagesAvatarImageFactory.avatarImage(with: image, diameter: 30)
     }
     
     //各メッセージの背景を設定

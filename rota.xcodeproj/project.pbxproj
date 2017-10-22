@@ -25,6 +25,7 @@
 		9AF6E8AC1F9C90A600D794C4 /* Humidity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E8AB1F9C90A600D794C4 /* Humidity.storyboard */; };
 		9AF6E8E81F9C998700D794C4 /* Dialogue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E8E71F9C998700D794C4 /* Dialogue.storyboard */; };
 		9AF6E8EE1F9CBA4500D794C4 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6E8ED1F9CBA4500D794C4 /* Extension+UIColor.swift */; };
+		9AF6E9181F9D1B5000D794C4 /* talkDoctor.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AF6E9171F9D1B4900D794C4 /* talkDoctor.png */; };
 		E0D2C2548804F5594C317F06 /* Pods_rotaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F6CA4EFAE1E7AD624CBF84 /* Pods_rotaUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 		9AF6E9111F9D183000D794C4 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		9AF6E9121F9D183000D794C4 /* iTunesArtwork@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@3x.png"; sourceTree = "<group>"; };
 		9AF6E9131F9D183000D794C4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9AF6E9171F9D1B4900D794C4 /* talkDoctor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = talkDoctor.png; sourceTree = "<group>"; };
 		D67FE672C7A4D023A98A4897 /* Pods-rota.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rota.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rota/Pods-rota.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -223,6 +225,7 @@
 			children = (
 				9AF6E8F61F9D183000D794C4 /* ios */,
 				9AF6E8A11F9C80AB00D794C4 /* doctorIcon.png */,
+				9AF6E9171F9D1B4900D794C4 /* talkDoctor.png */,
 				9AF6E8A31F9C80AB00D794C4 /* humidIcon.png */,
 				9AF6E8A21F9C80AB00D794C4 /* talkIcon.png */,
 				9AF6E8ED1F9CBA4500D794C4 /* Extension+UIColor.swift */,
@@ -420,6 +423,7 @@
 				9AF6E8711F9C2D1400D794C4 /* Main.storyboard in Resources */,
 				9AF6E8AC1F9C90A600D794C4 /* Humidity.storyboard in Resources */,
 				9AF6E8A41F9C816F00D794C4 /* doctorIcon.png in Resources */,
+				9AF6E9181F9D1B5000D794C4 /* talkDoctor.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
