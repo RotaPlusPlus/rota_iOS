@@ -136,11 +136,11 @@ extension HumidityViewController {
                                   for: (service.characteristics?.first)!)
     }
     
-    // データ更新時に呼ばれる
-    func peripheral(_ peripheral: CBPeripheral,
-                    didUpdateValueFor characteristic: CBCharacteristic,
-                    error: Error?) {
+    func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
         print("update characteristics value")
+        peripheral.setNotifyValue(true, for: characteristic)
+        print(connectingPeripheral)
+        print("setuped")
         if error != nil {
             print(error.debugDescription)
             return
@@ -148,6 +148,7 @@ extension HumidityViewController {
         
         update(humidData:characteristic.value! as NSData)
     }
+    
 }
 
 extension HumidityViewController {
